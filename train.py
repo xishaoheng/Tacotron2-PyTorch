@@ -1,4 +1,5 @@
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = ','.join(map(str, [3]))
 import time
 import torch
 import argparse

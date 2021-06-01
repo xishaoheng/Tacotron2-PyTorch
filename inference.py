@@ -1,6 +1,8 @@
+import os 
+os.environ["CUDA_VISIBLE_DEVICES"] = ','.join(map(str, [3]))
 import torch
 import argparse
-import numpy as np
+#import numpy as np
 import matplotlib.pylab as plt
 from text import text_to_sequence
 from model.model import Tacotron2
@@ -49,7 +51,7 @@ def audio(output, pth):
 def save_mel(output, pth):
 	mel_outputs, mel_outputs_postnet, _ = output
 	#np.save(pth+'.npy', to_arr(mel_outputs[0]).T)
-	np.save(pth+'.npy', to_arr(mel_outputs[0]).T)
+	#np.save(pth+'.npy', to_arr(mel_outputs[0]).T)
 
 
 if __name__ == '__main__':

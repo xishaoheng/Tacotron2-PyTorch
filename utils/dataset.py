@@ -10,10 +10,10 @@ from utils.audio import load_wav, melspectrogram
 
 def files_to_list(fdir):
 	f_list = []
-	with open(os.path.join(fdir, 'metadata.csv'), encoding = 'utf-8') as f:
+	with open(os.path.join(fdir, 'metadat.msv'), encoding = 'utf-8') as f:
 		for line in f:
 			parts = line.strip().split('|')
-			wav_path = os.path.join(fdir, 'wavs', '%s.wav' % parts[0])
+			wav_path = os.path.join(fdir, 'wav_16k', '%s.wav' % parts[0])
 			if hps.prep:
 				f_list.append(get_mel_text_pair(parts[1], wav_path))
 			else:
